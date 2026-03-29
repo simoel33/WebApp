@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "DataSync Pro — Sincronización SQLite en tiempo real edge-nube",
+    "description": "Sincronice bases SQLite locales desde máquinas industriales y sistemas perimetrales hacia la nube con una arquitectura orientada a eventos (patrón outbox). Pensado para fiabilidad a escala.",
+    "ogTitle": "DataSync Pro — Sync SQLite perimetral para sistemas industriales",
+    "ogDescription": "Plataforma de sincronización de datos en tiempo real para máquinas, PLCs y gateways perimetrales."
+  },
+  "nav": {
+    "features": "Funciones",
+    "howItWorks": "Cómo funciona",
+    "useCases": "Casos de uso",
+    "contact": "Contacto",
+    "faq": "FAQ",
+    "signIn": "Iniciar sesión",
+    "getStarted": "Empezar"
+  },
+  "hero": {
+    "badge": "Sync SQLite de edge a nube",
+    "title": "Sincronice datos industriales en tiempo real",
+    "highlight": "sin caos.",
+    "description": "DataSync Pro transmite cambios desde SQLite local en el perímetro hacia su backend en la nube con un patrón outbox resiliente—diseñado para PLCs, gateways y entornos industriales exigentes.",
+    "primaryCta": "Prueba gratuita",
+    "secondaryCta": "Ver arquitectura",
+    "stats": {
+      "latency": { "value": "<50ms", "label": "flush típico en edge" },
+      "uptime": { "value": "99,99%", "label": "diseño listo para SLA" },
+      "deploy": { "value": "500+", "label": "perfiles edge" }
+    }
+  },
+  "features": {
+    "title": "Todo lo que necesita para una sincronización fiable",
+    "subtitle": "Desde el armario hasta el data lake—un pipeline observable de extremo a extremo.",
+    "items": [
+      {
+        "title": "Entrega outbox primero",
+        "description": "Los eventos se capturan localmente, se ordenan y se reproducen con seguridad cuando vuelve la conectividad."
+      },
+      {
+        "title": "SQLite en el perímetro",
+        "description": "Use la base que ya ejecutan sus dispositivos. Migraciones de esquema y ganchos de conflicto incluidos."
+      },
+      {
+        "title": "Streaming en tiempo real",
+        "description": "Envíe flujos de cambios en el momento, con contrapresión y lotes configurables."
+      },
+      {
+        "title": "Operaciones de grado industrial",
+        "description": "Métricas, logs estructurados e IDs de traza entre agentes edge e ingesta en la nube."
+      },
+      {
+        "title": "Enrutamiento por políticas",
+        "description": "Filtre, enriquezca y enrute eventos antes de que salgan de la red de planta."
+      },
+      {
+        "title": "Nube multi-inquilino",
+        "description": "Aísle clientes y entornos compartiendo un plano de control unificado."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "subtitle": "Cuatro pasos desde el evento en máquina hasta la verdad en la nube.",
+    "steps": [
+      {
+        "title": "Captura",
+        "description": "Instrumente sus escrituras SQLite; los cambios van a una outbox local durable."
+      },
+      {
+        "title": "Preparación",
+        "description": "El agente edge agrupa, comprime y firma los payloads para el transporte."
+      },
+      {
+        "title": "Sincronización",
+        "description": "Flujos HTTPS con reintentos y acuses idempotentes—seguro en enlaces inestables."
+      },
+      {
+        "title": "Proyección",
+        "description": "Los servicios en la nube materializan vistas, disparan flujos de trabajo y alimentan analítica."
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Pensado para entornos edge serios",
+    "subtitle": "Los equipos eligen DataSync Pro cuando el tiempo de parada se mide en dinero.",
+    "cases": [
+      {
+        "title": "Líneas de fabricación",
+        "description": "MES y sistemas junto a SCADA se mantienen alineados con el historial central de producción."
+      },
+      {
+        "title": "Energía y utilities",
+        "description": "Subestaciones y equipos de campo amortiguan telemetría hasta que el backbone sea estable."
+      },
+      {
+        "title": "Activos de transporte",
+        "description": "Material rodante y depósitos sincronizan mantenimiento sin conectividad permanente."
+      },
+      {
+        "title": "Edificios inteligentes",
+        "description": "Controladores BMS en el perímetro consolidan lecturas antes de las nubes regionales."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "subtitle": "¿Tienes preguntas? Nos encantaría saber de ti.",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico profesional",
+      "role": "Puesto de trabajo",
+      "country": "País",
+      "phone": "Número de teléfono",
+      "message": "Mensaje",
+      "captcha": "No soy un robot",
+      "captchaLabel": "Confirmo que no soy un robot"
+    },
+    "button": {
+      "send": "Enviar mensaje",
+      "sending": "Enviando..."
+    },
+    "success": {
+      "title": "¡Mensaje enviado!",
+      "message": "Gracias por contactarnos. Te responderemos pronto."
+    }
+  },
+  "testimonials": {
+    "title": "Valorado por equipos de plataforma edge",
+    "subtitle": "Lo que dicen los operadores tras su primera semana sin pérdidas.",
+    "items": [
+      {
+        "quote": "Reemplazamos montones de crons y depósitos FTP frágiles. La reproducción outbox salvó tres plantas durante una caída del operador.",
+        "author": "Elena Voss",
+        "role": "Directora de Plataforma, Nordforge Automotive"
+      },
+      {
+        "quote": "SQLite en línea, Postgres en la nube—DataSync Pro hizo que esa división se sintiera deliberada, no aterradora.",
+        "author": "Marcus Chen",
+        "role": "Ingeniero principal, Gridline Energy"
+      },
+      {
+        "quote": "Las métricas de latencia por fin coinciden con lo que nuestro equipo OT ve en planta. Esa confianza valió la migración.",
+        "author": "Sofia Martins",
+        "role": "Jefa de Datos, Littoral Logistics"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Respuestas rápidas sobre despliegue, seguridad y escala.",
+    "items": [
+      {
+        "q": "¿Funciona totalmente sin conexión?",
+        "a": "Sí. La outbox persiste localmente hasta que vuelve la conectividad; la sincronización reanuda con el orden preservado."
+      },
+      {
+        "q": "¿Cómo gestionan los cambios de esquema?",
+        "a": "Los agentes edge admiten migraciones versionadas y coordinan trabajos de proyección en la nube para evitar deriva."
+      },
+      {
+        "q": "¿Y el cifrado?",
+        "a": "TLS en tránsito, cifrado de sobre opcional para cargas e integración KMS en la nube."
+      },
+      {
+        "q": "¿Podemos alojar el plano en la nube nosotros?",
+        "a": "El nivel Enterprise admite clústeres dedicados y peering VPC; hable con nosotros sobre opciones aisladas."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Sincronización en tiempo real para el perímetro industrial.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "links": {
+      "docs": "Documentación",
+      "changelog": "Historial de cambios",
+      "status": "Estado",
+      "about": "Acerca de",
+      "careers": "Carreras",
+      "contact": "Contacto",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "security": "Seguridad"
+    },
+    "copyright": "© {year} DataSync Pro. Todos los derechos reservados."
+  }
+}

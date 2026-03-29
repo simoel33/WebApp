@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+  <message>
+    <id>17747980089650vx5ouf6o</id>
+    <email>elyazidbusiness1@gmail.com</email>
+    <name>MOHAMED ELYAZID</name>
+    <role>Director</role>
+    <country>France</country>
+    <phoneNumber>+33 7 53 08 64 45</phoneNumber>
+    <message>i want to start using your product </message>
+    <createdAt>2026-03-29T15:26:48.965Z</createdAt>
+  </message>
+  <message>
+    <id>1774796622474uyec7wd0x</id>
+    <email>test2@example.com</email>
+    <name>Test User 2</name>
+    <role>Developer</role>
+    <country>USA</country>
+    <phoneNumber>1234567890</phoneNumber>
+    <message>Another test message</message>
+    <createdAt>2026-03-29T15:03:42.474Z</createdAt>
+  </message>
+</messages>

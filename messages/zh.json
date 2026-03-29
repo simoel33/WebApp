@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "DataSync Pro — 实时边缘到云端 SQLite 同步",
+    "description": "面向工业设备与边缘系统的实时数据同步平台，通过事件驱动的发件箱（Outbox）模式，将本地 SQLite 数据库同步到云端后端，为规模化可靠性而设计。",
+    "ogTitle": "DataSync Pro — 工业边缘 SQLite 同步",
+    "ogDescription": "面向机器、PLC 与边缘网关的实时数据同步平台。"
+  },
+  "nav": {
+    "features": "功能",
+    "howItWorks": "工作原理",
+    "useCases": "应用场景",
+    "contact": "联系我们",
+    "faq": "常见问题",
+    "signIn": "登录",
+    "getStarted": "开始使用"
+  },
+  "hero": {
+    "badge": "边缘到云端 SQLite 同步",
+    "title": "实时同步工业数据",
+    "highlight": "告别混乱。",
+    "description": "DataSync Pro 通过韧性的发件箱模式，将边缘本地 SQLite 的变更流式传输到云端后端——适用于 PLC、网关与严苛的工厂环境。",
+    "primaryCta": "免费试用",
+    "secondaryCta": "查看架构",
+    "stats": {
+      "latency": { "value": "<50ms", "label": "典型边缘刷新" },
+      "uptime": { "value": "99.99%", "label": "面向 SLA 的设计" },
+      "deploy": { "value": "500+", "label": "边缘配置模板" }
+    }
+  },
+  "features": {
+    "title": "可靠同步所需的一切",
+    "subtitle": "从机柜到数据湖——单一管道，端到端可观测。",
+    "items": [
+      {
+        "title": "发件箱优先投递",
+        "description": "事件在本地捕获、排序，并在网络恢复后安全重放——杜绝静默丢失。"
+      },
+      {
+        "title": "边缘 SQLite",
+        "description": "直接使用设备上已有的数据库。包含模式迁移与冲突钩子。"
+      },
+      {
+        "title": "实时流式传输",
+        "description": "变更发生时即时向上游推送，背压与批量由你掌控。"
+      },
+      {
+        "title": "工业级运维",
+        "description": "指标、结构化日志与追踪 ID，贯通边缘代理与云端摄入。"
+      },
+      {
+        "title": "策略驱动路由",
+        "description": "在数据离开工厂网络前进行过滤、丰富与路由。"
+      },
+      {
+        "title": "多租户云端",
+        "description": "在共享统一控制平面的同时隔离客户与环境。"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "工作原理",
+    "subtitle": "从机器事件到云端事实的四步流程。",
+    "steps": [
+      {
+        "title": "捕获",
+        "description": "为 SQLite 写入埋点；变更进入持久本地发件箱。"
+      },
+      {
+        "title": "暂存",
+        "description": "边缘代理批量、压缩并为载荷签名以便传输。"
+      },
+      {
+        "title": "同步",
+        "description": "HTTPS 流式传输，具备重试与幂等回执——在不稳定链路上依然安全。"
+      },
+      {
+        "title": "投影",
+        "description": "云端服务物化视图、触发工作流并分发到分析系统。"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "为严肃的边缘环境而打造",
+    "subtitle": "当停机成本以金钱衡量时，团队选择 DataSync Pro。",
+    "cases": [
+      {
+        "title": "产线制造",
+        "description": "MES 与近 SCADA 系统与中央生产历史保持一致。"
+      },
+      {
+        "title": "能源与公用事业",
+        "description": "变电站与现场设备在网络稳定前缓冲遥测数据。"
+      },
+      {
+        "title": "交通资产",
+        "description": "机车与场站无需始终在线即可同步维护日志。"
+      },
+      {
+        "title": "智能楼宇",
+        "description": "边缘 BMS 控制器在区域云之前汇总读数。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有问题吗？我们很乐意听取您的意见。",
+    "fields": {
+      "name": "全名",
+      "email": "专业邮箱",
+      "role": "职位",
+      "country": "国家",
+      "phone": "电话号码",
+      "message": "信息",
+      "captcha": "我不是机器人",
+      "captchaLabel": "我确认我不是机器人"
+    },
+    "button": {
+      "send": "发送信息",
+      "sending": "正在发送..."
+    },
+    "success": {
+      "title": "消息已发送！",
+      "message": "感谢您与我们联系。我们很快就会回复您。"
+    }
+  },
+  "testimonials": {
+    "title": "深受边缘平台团队喜爱",
+    "subtitle": "运营商在首次实现零丢失一周后的评价。",
+    "items": [
+      {
+        "quote": "我们替换了一堆定时任务和脆弱的 FTP 投递。发件箱重放在运营商中断期间挽救了三家工厂。",
+        "author": "Elena Voss",
+        "role": "平台总监，Nordforge Automotive"
+      },
+      {
+        "quote": "产线用 SQLite，云端用 Postgres——DataSync Pro 让这种拆分显得稳妥而非可怕。",
+        "author": "Marcus Chen",
+        "role": "首席工程师，Gridline Energy"
+      },
+      {
+        "quote": "延迟指标终于与 OT 团队在现场看到的一致。这份信任值得迁移。",
+        "author": "Sofia Martins",
+        "role": "数据负责人，Littoral Logistics"
+      }
+    ]
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "关于部署、安全与规模的快速解答。",
+    "items": [
+      {
+        "q": "能否完全离线工作？",
+        "a": "可以。发件箱在本地持久保存，直到连接恢复；同步在保持顺序的前提下继续。"
+      },
+      {
+        "q": "如何处理模式变更？",
+        "a": "边缘代理支持版本化迁移，并与云端投影任务协调以避免漂移。"
+      },
+      {
+        "q": "加密如何实现？",
+        "a": "传输层 TLS、可选载荷信封加密，以及云端 KMS 集成。"
+      },
+      {
+        "q": "能否自托管云端平面？",
+        "a": "企业版支持专属集群与 VPC 对等；欢迎咨询隔离部署方案。"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "面向工业边缘的实时同步。",
+    "product": "产品",
+    "company": "公司",
+    "legal": "法律",
+    "links": {
+      "docs": "文档",
+      "changelog": "更新日志",
+      "status": "状态",
+      "about": "关于",
+      "careers": "招聘",
+      "contact": "联系",
+      "privacy": "隐私",
+      "terms": "条款",
+      "security": "安全"
+    },
+    "copyright": "© {year} DataSync Pro。保留所有权利。"
+  }
+}

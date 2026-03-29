@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "DataSync Pro — Real-time edge-to-cloud SQLite sync",
+    "description": "Synchronize local SQLite databases from industrial machines and edge systems to the cloud with an event-driven outbox architecture. Built for reliability at scale.",
+    "ogTitle": "DataSync Pro — Edge SQLite sync for industrial systems",
+    "ogDescription": "Real-time data synchronization platform for machines, PLCs, and edge gateways."
+  },
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "useCases": "Use cases",
+    "contact": "Contact as",
+    "faq": "FAQ",
+    "signIn": "Sign in",
+    "getStarted": "Get started"
+  },
+  "hero": {
+    "badge": "Edge-to-cloud SQLite sync",
+    "title": "Sync industrial data in real time",
+    "highlight": "without the chaos.",
+    "description": "DataSync Pro streams changes from local SQLite at the edge to your cloud backend using a resilient outbox pattern—built for PLCs, gateways, and harsh factory floors.",
+    "primaryCta": "Start free trial",
+    "secondaryCta": "View architecture",
+    "stats": {
+      "latency": { "value": "<50ms", "label": "typical edge flush" },
+      "uptime": { "value": "99.99%", "label": "SLA-ready design" },
+      "deploy": { "value": "500+", "label": "edge profiles" }
+    }
+  },
+  "features": {
+    "title": "Everything you need for dependable sync",
+    "subtitle": "From dusty cabinets to your data lake—one pipeline, observable end to end.",
+    "items": [
+      {
+        "title": "Outbox-first delivery",
+        "description": "Events are captured locally, ordered, and replayed safely when connectivity returns—no silent drops."
+      },
+      {
+        "title": "SQLite at the edge",
+        "description": "Use the database your devices already run. Schema migrations and conflict hooks included."
+      },
+      {
+        "title": "Real-time streaming",
+        "description": "Push change feeds upstream as they happen, with backpressure and batching you control."
+      },
+      {
+        "title": "Industrial-grade ops",
+        "description": "Metrics, structured logs, and trace IDs across edge agents and cloud ingest."
+      },
+      {
+        "title": "Policy-driven routing",
+        "description": "Filter, enrich, and route events before they leave the plant network."
+      },
+      {
+        "title": "Multi-tenant cloud",
+        "description": "Isolate customers and environments while sharing a unified control plane."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Four steps from machine event to cloud truth.",
+    "steps": [
+      {
+        "title": "Capture",
+        "description": "Instrument your SQLite writers; changes land in a durable local outbox."
+      },
+      {
+        "title": "Stage",
+        "description": "The edge agent batches, compresses, and signs payloads for transport."
+      },
+      {
+        "title": "Sync",
+        "description": "HTTPS streams with retries and idempotent receipts—safe over flaky links."
+      },
+      {
+        "title": "Project",
+        "description": "Cloud services materialize views, trigger workflows, and fan out to analytics."
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Built for serious edge environments",
+    "subtitle": "Teams use DataSync Pro when downtime is measured in dollars.",
+    "cases": [
+      {
+        "title": "Manufacturing lines",
+        "description": "MES and SCADA adjacent systems stay consistent with central production history."
+      },
+      {
+        "title": "Energy & utilities",
+        "description": "Substations and field devices buffer telemetry until the backbone is stable."
+      },
+      {
+        "title": "Transportation assets",
+        "description": "Rolling stock and depots sync maintenance logs without always-on connectivity."
+      },
+      {
+        "title": "Smart buildings",
+        "description": "BMS edge controllers consolidate readings before hitting regional clouds."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions? We'd love to hear from you.",
+    "fields": {
+      "name": "Full Name",
+      "email": "Professional Email",
+      "role": "Job Role",
+      "country": "Country",
+      "phone": "Phone Number",
+      "message": "Message",
+      "captcha": "I'm not a robot",
+      "captchaLabel": "I confirm that I am not a robot"
+    },
+    "button": {
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for contacting us. We'll get back to you soon."
+    }
+  },
+  "testimonials": {
+    "title": "Loved by edge platform teams",
+    "subtitle": "What operators say after their first zero-loss week.",
+    "items": [
+      {
+        "quote": "We replaced a pile of cron jobs and brittle FTP drops. Outbox replay saved three plants during a carrier outage.",
+        "author": "Elena Voss",
+        "role": "Director of Platform, Nordforge Automotive"
+      },
+      {
+        "quote": "SQLite on the line, Postgres in the cloud—DataSync Pro made that split feel intentional instead of scary.",
+        "author": "Marcus Chen",
+        "role": "Principal Engineer, Gridline Energy"
+      },
+      {
+        "quote": "Latency metrics finally match what our OT team sees on the floor. That trust was worth the migration.",
+        "author": "Sofia Martins",
+        "role": "Head of Data, Littoral Logistics"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Quick answers about deployment, security, and scale.",
+    "items": [
+      {
+        "q": "Does it work fully offline?",
+        "a": "Yes. The outbox persists locally until connectivity returns; sync resumes with ordering preserved."
+      },
+      {
+        "q": "How do you handle schema changes?",
+        "a": "Edge agents support versioned migrations and coordinate with cloud projection jobs to avoid drift."
+      },
+      {
+        "q": "What about encryption?",
+        "a": "TLS in transit, optional envelope encryption for payloads, and KMS integration in cloud."
+      },
+      {
+        "q": "Can we self-host the cloud plane?",
+        "a": "Enterprise tier supports dedicated clusters and VPC peering; talk to us about air-gapped options."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Real-time sync for the industrial edge.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "links": {
+      "docs": "Documentation",
+      "changelog": "Changelog",
+      "status": "Status",
+      "about": "About",
+      "careers": "Careers",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security"
+    },
+    "copyright": "© {year} DataSync Pro. All rights reserved."
+  }
+}
