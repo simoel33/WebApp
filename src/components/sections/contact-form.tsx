@@ -29,12 +29,19 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      captcha: false,
+    },
   });
+
+  const captchaValue = watch("captcha");
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    console.log("Form data being sent:", data);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -42,13 +49,16 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
 
+      console.log("API response status:", response.status);
+      const responseData = await response.json();
+      console.log("API response data:", responseData);
+
       if (response.ok) {
         setIsSuccess(true);
         reset();
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        const error = await response.json();
-        alert(error.message || "Failed to send message");
+        alert(responseData.message || "Failed to send message");
       }
     } catch (error) {
       console.error("Form submission error:", error);
