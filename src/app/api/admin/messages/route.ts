@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { XMLMessageStore } from "@/lib/xml-message-store";
+import { PrismaClient } from "@/generated/prisma";
 import { requireAdminAuth } from "@/lib/admin-session";
+
+const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
@@ -9,16 +11,38 @@ export async function GET(request: NextRequest) {
     // Get messages with pagination
     const page = request.nextUrl.searchParams.get("page");
     const pageNumber = parseInt(page || "1");
+    const pageSize = 20;
+    const skip = (pageNumber - 1) * pageSize;
 
-    const result = await XMLMessageStore.getMessages(pageNumber, 20);
+    const [messages, totalCount] = await Promise.all([
+      prisma.contactMessage.findMany({
+        orderBy: { createdAt: 'desc' },
+        skip,
+        take: pageSize,
+      }),
+      prisma.contactMessage.count(),
+    ]);
 
-    return NextResponse.json(result);
+    const totalPages = Math.ceil(totalCount / pageSize);
+
+    return NextResponse.json({
+      messages,
+      pagination: {
+        currentPage: pageNumber,
+        totalPages,
+        totalCount,
+        hasNext: pageNumber < totalPages,
+        hasPrev: pageNumber > 1,
+      },
+    });
   } catch (error) {
     console.error("Get messages error:", error);
     return NextResponse.json(
       { message: "Unauthorized" },
       { status: 401 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }
 
@@ -36,18 +60,27 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const deleted = await XMLMessageStore.deleteMessage(id);
+    const deletedMessage = await prisma.contactMessage.delete({
+      where: { id },
+    });
 
-    if (!deleted) {
+    return NextResponse.json({ message: "Message deleted successfully" });
+  } catch (error) {
+    console.error("Delete message error:", error);
+    if (error.code === 'P2025') {
       return NextResponse.json(
         { message: "Message not found" },
         { status: 404 }
       );
     }
-
-    return NextResponse.json({ message: "Message deleted successfully" });
-  } catch (error) {
-    console.error("Delete message error:", error);
+    return NextResponse.json(
+      { message: "Unauthorized" },
+      { status: 401 }
+    );
+  } finally {
+    await prisma.$disconnect();
+  }
+}
     return NextResponse.json(
       { message: "Unauthorized" },
       { status: 401 }

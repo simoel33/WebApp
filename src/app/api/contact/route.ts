@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { XMLMessageStore } from "@/lib/xml-message-store";
+import { PrismaClient } from "@/generated/prisma";
+
+const prisma = new PrismaClient();
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,14 +16,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Save to XML file
-    const savedMessage = await XMLMessageStore.saveMessage({
-      email,
-      name,
-      role,
-      country,
-      phoneNumber,
-      message,
+    // Save to database
+    const savedMessage = await prisma.contactMessage.create({
+      data: {
+        email,
+        name,
+        role,
+        country,
+        phoneNumber,
+        message,
+      },
     });
 
     return NextResponse.json(
@@ -37,10 +41,7 @@ export async function POST(request: NextRequest) {
       { message: "An error occurred while sending your message" },
       { status: 500 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }
-//   } catch (error) {
-//     console.error("Captcha verification error:", error);
-//     return false;
-//   }
-// }
