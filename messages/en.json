@@ -1,105 +1,274 @@
 {
   "metadata": {
-    "title": "DataSync Pro — Real-time edge-to-cloud SQLite sync",
-    "description": "Synchronize local SQLite databases from industrial machines and edge systems to the cloud with an event-driven outbox architecture. Built for reliability at scale.",
-    "ogTitle": "DataSync Pro — Edge SQLite sync for industrial systems",
-    "ogDescription": "Real-time data synchronization platform for machines, PLCs, and edge gateways."
+    "title": "DataSync Pro — Enterprise SQLite Synchronization Platform",
+    "description": "Securely synchronize SQLite databases from edge devices, industrial machines, and remote sites to cloud platforms. Offline-first architecture with reliable data delivery for distributed systems.",
+    "ogTitle": "DataSync Pro — Enterprise Edge-to-Cloud SQLite Sync",
+    "ogDescription": "Professional data synchronization platform for industrial IoT, distributed applications, and edge computing environments."
   },
   "nav": {
     "features": "Features",
-    "howItWorks": "How it works",
-    "useCases": "Use cases",
-    "contact": "Contact as",
+    "howItWorks": "How It Works",
+    "useCases": "Use Cases",
+    "benefits": "Benefits",
+    "architecture": "Architecture",
+    "pricing": "Pricing",
+    "contact": "Contact",
     "faq": "FAQ",
-    "signIn": "Sign in",
-    "getStarted": "Get started"
+    "signIn": "Sign In",
+    "getStarted": "Book Demo"
   },
   "hero": {
-    "badge": "Edge-to-cloud SQLite sync",
-    "title": "Sync industrial data in real time",
-    "highlight": "without the chaos.",
-    "description": "DataSync Pro streams changes from local SQLite at the edge to your cloud backend using a resilient outbox pattern—built for PLCs, gateways, and harsh factory floors.",
-    "primaryCta": "Start free trial",
-    "secondaryCta": "View architecture",
+    "badge": "Enterprise SQLite Synchronization",
+    "title": "Reliable Edge-to-Cloud Data Sync",
+    "highlight": "for Industrial Operations",
+    "description": "Transform isolated SQLite databases into a unified cloud platform. DataSync Pro provides offline-first synchronization with guaranteed delivery, perfect for industrial machines, remote sites, and distributed applications.",
+    "secondaryCta": "View Architecture",
     "stats": {
-      "latency": { "value": "<50ms", "label": "typical edge flush" },
-      "uptime": { "value": "99.99%", "label": "SLA-ready design" },
-      "deploy": { "value": "500+", "label": "edge profiles" }
+      "latency": { "value": "<100ms", "label": "edge sync latency" },
+      "uptime": { "value": "99.9%", "label": "platform uptime" },
+      "deploy": { "value": "1000+", "label": "active deployments" }
     }
   },
+  "problem": {
+    "title": "The Challenge of SQLite Synchronization",
+    "subtitle": "Why traditional approaches fail in industrial environments",
+    "description": "Industrial operations rely on SQLite databases running on edge devices, machines, and remote sites. But synchronizing this data to the cloud presents unique challenges that generic solutions can't address.",
+    "challenges": [
+      {
+        "title": "Unreliable Connectivity",
+        "description": "Industrial environments often have intermittent or unstable network connections, making real-time sync impossible."
+      },
+      {
+        "title": "Data Loss Risk",
+        "description": "Custom sync scripts and manual processes risk losing critical operational data during network outages."
+      },
+      {
+        "title": "Complex Multi-Site Management",
+        "description": "Coordinating data across hundreds of remote locations, machines, and edge devices becomes unmanageable."
+      },
+      {
+        "title": "Offline Operation Requirements",
+        "description": "Industrial systems must continue functioning even when disconnected from central systems."
+      },
+      {
+        "title": "Data Consistency Issues",
+        "description": "Ensuring data integrity and proper sequencing across distributed SQLite databases is technically challenging."
+      },
+      {
+        "title": "Scalability Limitations",
+        "description": "As operations grow, traditional synchronization approaches become fragile and expensive to maintain."
+      }
+    ]
+  },
+  "solution": {
+    "title": "The DataSync Pro Solution",
+    "subtitle": "Enterprise-grade SQLite synchronization designed for industrial environments",
+    "description": "DataSync Pro solves the fundamental challenges of edge-to-cloud data synchronization with an offline-first architecture that guarantees data delivery while maintaining local system autonomy.",
+    "keyPoints": [
+      {
+        "title": "Offline-First Design",
+        "description": "Local SQLite databases remain fully functional during network outages, with automatic sync resumption when connectivity returns."
+      },
+      {
+        "title": "Guaranteed Delivery",
+        "description": "Outbox-based architecture ensures every data change is captured and delivered to the cloud, with full audit trails."
+      },
+      {
+        "title": "Industrial Hardened",
+        "description": "Built for harsh industrial environments with retry logic, sequence validation, and robust error handling."
+      },
+      {
+        "title": "Centralized Visibility",
+        "description": "Transform isolated edge data into unified cloud insights with real-time monitoring and analytics capabilities."
+      }
+    ]
+  },
   "features": {
-    "title": "Everything you need for dependable sync",
-    "subtitle": "From dusty cabinets to your data lake—one pipeline, observable end to end.",
+    "title": "Enterprise Features for Mission-Critical Operations",
+    "subtitle": "Built for reliability, security, and scale in industrial environments",
     "items": [
       {
-        "title": "Outbox-first delivery",
-        "description": "Events are captured locally, ordered, and replayed safely when connectivity returns—no silent drops."
+        "title": "Offline-First Synchronization",
+        "description": "Local operations continue uninterrupted during network outages. Changes are queued and automatically synced when connectivity returns."
       },
       {
-        "title": "SQLite at the edge",
-        "description": "Use the database your devices already run. Schema migrations and conflict hooks included."
+        "title": "Outbox Pattern Architecture",
+        "description": "Reliable change capture with sequence numbering ensures no data loss and maintains proper ordering across all operations."
       },
       {
-        "title": "Real-time streaming",
-        "description": "Push change feeds upstream as they happen, with backpressure and batching you control."
+        "title": "Batch Processing & Optimization",
+        "description": "Intelligent batching reduces network overhead while maintaining real-time performance for critical operations."
       },
       {
-        "title": "Industrial-grade ops",
-        "description": "Metrics, structured logs, and trace IDs across edge agents and cloud ingest."
+        "title": "Enterprise Security",
+        "description": "End-to-end encryption, secure authentication, and compliance-ready architecture for sensitive industrial data."
       },
       {
-        "title": "Policy-driven routing",
-        "description": "Filter, enrich, and route events before they leave the plant network."
+        "title": "Multi-Site Scalability",
+        "description": "Seamlessly manage thousands of edge locations with centralized monitoring and automated conflict resolution."
       },
       {
-        "title": "Multi-tenant cloud",
-        "description": "Isolate customers and environments while sharing a unified control plane."
+        "title": "Real-Time Monitoring",
+        "description": "Comprehensive dashboards, alerting, and audit logs provide complete visibility into sync operations and system health."
+      },
+      {
+        "title": "Schema Evolution Support",
+        "description": "Handle database schema changes across distributed environments with automated migration and version control."
+      },
+      {
+        "title": "Developer-Friendly Integration",
+        "description": "REST APIs, SDKs, and comprehensive documentation make integration with existing systems straightforward."
       }
     ]
   },
   "howItWorks": {
-    "title": "How it works",
-    "subtitle": "Four steps from machine event to cloud truth.",
+    "title": "How DataSync Pro Works",
+    "subtitle": "Four-step process from edge capture to cloud insights",
+    "description": "Our proven synchronization architecture ensures reliable data flow from any SQLite database to your cloud platform.",
     "steps": [
       {
-        "title": "Capture",
-        "description": "Instrument your SQLite writers; changes land in a durable local outbox."
+        "title": "Change Capture",
+        "description": "Local SQLite database changes are automatically captured and stored in a durable outbox queue with sequence numbering."
       },
       {
-        "title": "Stage",
-        "description": "The edge agent batches, compresses, and signs payloads for transport."
+        "title": "Smart Batching",
+        "description": "Changes are intelligently batched and compressed for efficient transmission, respecting network constraints."
       },
       {
-        "title": "Sync",
-        "description": "HTTPS streams with retries and idempotent receipts—safe over flaky links."
+        "title": "Reliable Transmission",
+        "description": "Secure HTTPS transmission with automatic retry logic and idempotent processing handles unstable connectivity."
       },
       {
-        "title": "Project",
-        "description": "Cloud services materialize views, trigger workflows, and fan out to analytics."
+        "title": "Cloud Ingestion",
+        "description": "Validated data is ingested into your cloud platform, maintaining referential integrity and enabling real-time analytics."
       }
     ]
   },
+  "architecture": {
+    "title": "Architecture Overview",
+    "subtitle": "Understanding the DataSync Pro synchronization framework",
+    "description": "Our architecture is designed for the realities of industrial deployments: unreliable networks, distributed systems, and mission-critical operations.",
+    "sections": [
+      {
+        "title": "Edge Agent Architecture",
+        "description": "Lightweight agents run alongside your SQLite databases, capturing changes without impacting performance.",
+        "diagramNote": "[Insert Edge Agent Architecture Diagram]"
+      },
+      {
+        "title": "Outbox Pattern Implementation",
+        "description": "Changes are captured in ordered queues, ensuring reliable delivery even during network interruptions.",
+        "diagramNote": "[Insert Outbox Pattern Flow Diagram]"
+      },
+      {
+        "title": "Cloud Ingestion Pipeline",
+        "description": "Scalable cloud services validate, transform, and store synchronized data with full audit capabilities.",
+        "diagramNote": "[Insert Cloud Pipeline Architecture]"
+      },
+      {
+        "title": "Multi-Site Synchronization",
+        "description": "Centralized coordination manages data consistency across thousands of distributed locations.",
+        "diagramNote": "[Insert Multi-Site Sync Overview]"
+      }
+    ],
+    "diagramPlaceholder": "Architecture diagrams and detailed technical specifications available in our documentation."
+  },
   "useCases": {
-    "title": "Built for serious edge environments",
-    "subtitle": "Teams use DataSync Pro when downtime is measured in dollars.",
+    "title": "Industry Applications",
+    "subtitle": "Proven solutions across industrial and distributed computing environments",
+    "description": "DataSync Pro serves organizations that need reliable SQLite synchronization in challenging operational environments.",
     "cases": [
       {
-        "title": "Manufacturing lines",
-        "description": "MES and SCADA adjacent systems stay consistent with central production history."
+        "title": "Industrial Equipment Data",
+        "description": "Connect PLCs, SCADA systems, and industrial controllers to centralized monitoring platforms with guaranteed data delivery."
       },
       {
-        "title": "Energy & utilities",
-        "description": "Substations and field devices buffer telemetry until the backbone is stable."
+        "title": "Remote SQLite Operations",
+        "description": "Synchronize SQLite databases from remote facilities and field operations with intermittent connectivity."
       },
       {
-        "title": "Transportation assets",
-        "description": "Rolling stock and depots sync maintenance logs without always-on connectivity."
+        "title": "IoT Gateway Networks",
+        "description": "Aggregate data from distributed IoT devices and edge gateways into unified cloud analytics platforms."
       },
       {
-        "title": "Smart buildings",
-        "description": "BMS edge controllers consolidate readings before hitting regional clouds."
+        "title": "Distributed Desktop Applications",
+        "description": "Enable offline-capable desktop software to synchronize with cloud services while maintaining local performance."
+      },
+      {
+        "title": "Energy & Utilities Management",
+        "description": "Monitor substations, smart meters, and field equipment with reliable data collection in remote environments."
+      },
+      {
+        "title": "Transportation & Fleet Management",
+        "description": "Track maintenance logs, sensor data, and operational metrics from vehicles and mobile equipment."
       }
     ]
+  },
+  "benefits": {
+    "title": "Business Impact & ROI",
+    "subtitle": "Measurable improvements in operational efficiency and decision-making",
+    "description": "Organizations using DataSync Pro report significant improvements in data reliability, operational visibility, and system scalability.",
+    "metrics": [
+      {
+        "title": "99.9% Data Reliability",
+        "description": "Guaranteed delivery eliminates data loss and ensures complete operational visibility."
+      },
+      {
+        "title": "70% Reduction in Manual Tasks",
+        "description": "Automated synchronization replaces error-prone manual data exports and imports."
+      },
+      {
+        "title": "50% Faster Decision Making",
+        "description": "Real-time cloud visibility enables faster response to operational events and trends."
+      },
+      {
+        "title": "Scalable to 10,000+ Sites",
+        "description": "Enterprise architecture supports massive scale without performance degradation."
+      }
+    ],
+    "outcomes": [
+      {
+        "title": "Operational Excellence",
+        "description": "Reduce downtime, improve maintenance scheduling, and optimize resource utilization."
+      },
+      {
+        "title": "Risk Mitigation",
+        "description": "Eliminate data loss risks and ensure compliance with operational data requirements."
+      },
+      {
+        "title": "Cost Optimization",
+        "description": "Reduce manual data handling costs and minimize custom development expenses."
+      },
+      {
+        "title": "Future-Ready Architecture",
+        "description": "Build on a scalable foundation that grows with your operational requirements."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Enterprise Pricing",
+    "subtitle": "Flexible deployment options for organizations of all sizes",
+    "description": "Choose the deployment model that best fits your infrastructure and compliance requirements.",
+    "tiers": [
+      {
+        "name": "Cloud",
+        "price": "Contact Us",
+        "description": "Fully managed cloud service with automatic scaling and updates.",
+        "features": ["99.9% SLA", "Automatic scaling", "Daily backups", "24/7 support"]
+      },
+      {
+        "name": "Hybrid",
+        "price": "Contact Us",
+        "description": "Combine cloud ingestion with on-premise edge agents for maximum control.",
+        "features": ["Custom deployment", "Data sovereignty", "Advanced security", "Dedicated support"]
+      },
+      {
+        "name": "On-Premise",
+        "price": "Contact Us",
+        "description": "Complete on-premise deployment for air-gapped and regulated environments.",
+        "features": ["Full control", "Custom integrations", "White-label options", "Premium support"]
+      }
+    ],
+    "cta": "Contact our sales team for a customized quote and proof-of-concept deployment."
   },
   "contact": {
     "title": "Get in Touch",
@@ -109,7 +278,7 @@
       "email": "Professional Email",
       "role": "Job Role",
       "country": "Country",
-      "phone": "Phone Number",
+      "phoneNumber": "Phone Number",
       "message": "Message",
       "captcha": "I'm not a robot",
       "captchaLabel": "I confirm that I am not a robot"
@@ -124,63 +293,91 @@
     }
   },
   "testimonials": {
-    "title": "Loved by edge platform teams",
-    "subtitle": "What operators say after their first zero-loss week.",
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Real results from organizations transforming their data operations",
     "items": [
       {
-        "quote": "We replaced a pile of cron jobs and brittle FTP drops. Outbox replay saved three plants during a carrier outage.",
-        "author": "Elena Voss",
-        "role": "Director of Platform, Nordforge Automotive"
+        "quote": "DataSync Pro eliminated our data synchronization headaches completely. We now have reliable visibility into operations across 200+ remote manufacturing sites.",
+        "author": "Sarah Chen",
+        "role": "VP of Operations, Global Manufacturing Corp"
       },
       {
-        "quote": "SQLite on the line, Postgres in the cloud—DataSync Pro made that split feel intentional instead of scary.",
-        "author": "Marcus Chen",
-        "role": "Principal Engineer, Gridline Energy"
+        "quote": "The offline-first architecture was a game-changer for our field service operations. Technicians can work anywhere, and data syncs perfectly when they reconnect.",
+        "author": "Marcus Rodriguez",
+        "role": "CTO, FieldTech Solutions"
       },
       {
-        "quote": "Latency metrics finally match what our OT team sees on the floor. That trust was worth the migration.",
-        "author": "Sofia Martins",
-        "role": "Head of Data, Littoral Logistics"
+        "quote": "We've reduced manual data processing by 80% and gained real-time insights into our industrial operations. The ROI was evident within the first quarter.",
+        "author": "Dr. Elena Volkov",
+        "role": "Head of Digital Transformation, EnergyPlus"
       }
     ]
   },
   "faq": {
-    "title": "Frequently asked questions",
-    "subtitle": "Quick answers about deployment, security, and scale.",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions about DataSync Pro",
     "items": [
       {
-        "q": "Does it work fully offline?",
-        "a": "Yes. The outbox persists locally until connectivity returns; sync resumes with ordering preserved."
+        "q": "How does DataSync Pro handle offline operations?",
+        "a": "DataSync Pro uses an offline-first architecture where local SQLite databases remain fully operational during network outages. Changes are captured in a durable outbox and automatically synchronized when connectivity returns, ensuring no data loss."
       },
       {
-        "q": "How do you handle schema changes?",
-        "a": "Edge agents support versioned migrations and coordinate with cloud projection jobs to avoid drift."
+        "q": "What makes SQLite synchronization challenging?",
+        "a": "SQLite databases in distributed environments face connectivity issues, data consistency challenges, schema evolution, and the need for guaranteed delivery. Traditional approaches often fail in industrial settings with unreliable networks."
       },
       {
-        "q": "What about encryption?",
-        "a": "TLS in transit, optional envelope encryption for payloads, and KMS integration in cloud."
+        "q": "How do you guarantee data ordering and consistency?",
+        "a": "Our outbox pattern captures changes with sequence numbers, ensuring proper ordering. The cloud ingestion validates sequences and handles conflicts, maintaining data integrity across all synchronized operations."
       },
       {
-        "q": "Can we self-host the cloud plane?",
-        "a": "Enterprise tier supports dedicated clusters and VPC peering; talk to us about air-gapped options."
+        "q": "Can DataSync Pro handle multiple remote sites?",
+        "a": "Yes, DataSync Pro is designed for multi-site deployments with thousands of locations. Our cloud platform provides centralized monitoring and management while maintaining local autonomy at each site."
+      },
+      {
+        "q": "Is the data transmission secure?",
+        "a": "Absolutely. All data transmission uses TLS encryption, and we support additional encryption layers. The platform is SOC 2 compliant and can be deployed in air-gapped environments for maximum security."
+      },
+      {
+        "q": "How does integration work with existing systems?",
+        "a": "DataSync Pro provides REST APIs, SDKs, and comprehensive documentation. Most integrations require minimal code changes and can be completed in days rather than months."
+      },
+      {
+        "q": "What about data conflicts and schema changes?",
+        "a": "The platform includes conflict resolution strategies and supports schema evolution. Changes are versioned and migrations are coordinated across distributed environments."
+      },
+      {
+        "q": "Can we self-host the cloud components?",
+        "a": "Yes, enterprise customers can deploy the cloud ingestion components in their own infrastructure, including on-premise data centers and private clouds."
+      },
+      {
+        "q": "What's the typical deployment timeline?",
+        "a": "Most deployments are completed within 4-8 weeks, including integration, testing, and training. We provide comprehensive support throughout the process."
+      },
+      {
+        "q": "Do you offer professional services?",
+        "a": "Yes, we provide implementation services, custom integrations, training, and ongoing support to ensure successful deployment and adoption."
       }
     ]
   },
   "footer": {
-    "tagline": "Real-time sync for the industrial edge.",
+    "tagline": "Reliable SQLite synchronization for industrial operations.",
     "product": "Product",
     "company": "Company",
+    "resources": "Resources",
     "legal": "Legal",
     "links": {
       "docs": "Documentation",
+      "api": "API Reference",
       "changelog": "Changelog",
-      "status": "Status",
+      "status": "System Status",
       "about": "About",
       "careers": "Careers",
+      "blog": "Blog",
       "contact": "Contact",
-      "privacy": "Privacy",
-      "terms": "Terms",
-      "security": "Security"
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "security": "Security",
+      "support": "Support"
     },
     "copyright": "© {year} DataSync Pro. All rights reserved."
   }
