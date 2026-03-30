@@ -1,26 +1,26 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
-  const locales = ['en', 'ar', 'es', 'fr', 'zh']
-
-  const routes = [
-    '',
-    '/admin-space',
-    '/admin-space/dashboard'
-  ]
+  const baseUrl = 'https://sqlitesynchonizer.com'
+  const locales = ['en', 'ar', 'es', 'fr', 'zh', 'ru']
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 
-  // Add entries for each locale and route combination
+  // Add root domain entry
+  sitemapEntries.push({
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1.0,
+  })
+
+  // Add entries for each locale
   locales.forEach(locale => {
-    routes.forEach(route => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${locale}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
-      })
+    sitemapEntries.push({
+      url: `${baseUrl}/${locale}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     })
   })
 

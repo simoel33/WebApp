@@ -1,103 +1,245 @@
 {
   "metadata": {
-    "title": "DataSync Pro — 实时边缘到云端 SQLite 同步",
-    "description": "面向工业设备与边缘系统的实时数据同步平台，通过事件驱动的发件箱（Outbox）模式，将本地 SQLite 数据库同步到云端后端，为规模化可靠性而设计。",
-    "ogTitle": "DataSync Pro — 工业边缘 SQLite 同步",
-    "ogDescription": "面向机器、PLC 与边缘网关的实时数据同步平台。"
+    "title": "DataSync Pro — 企业级 SQLite 同步平台",
+    "description": "安全地将边缘设备、工业机器和远程站点上的 SQLite 数据库同步到云平台。离线优先架构，确保分布式系统的数据可靠交付。",
+    "ogTitle": "DataSync Pro — 企业级边缘到云端 SQLite 同步",
+    "ogDescription": "面向工业物联网、分布式应用和边缘计算环境的专业数据同步平台。"
   },
   "nav": {
     "features": "功能",
     "howItWorks": "工作原理",
     "useCases": "应用场景",
+    "benefits": "优势",
+    "architecture": "架构",
     "contact": "联系我们",
     "faq": "常见问题",
     "signIn": "登录",
     "getStarted": "开始使用"
   },
   "hero": {
-    "badge": "边缘到云端 SQLite 同步",
-    "title": "实时同步工业数据",
-    "highlight": "告别混乱。",
-    "description": "DataSync Pro 通过韧性的发件箱模式，将边缘本地 SQLite 的变更流式传输到云端后端——适用于 PLC、网关与严苛的工厂环境。",
-    "primaryCta": "免费试用",
+    "badge": "企业级 SQLite 同步",
+    "title": "可靠的边缘到云端同步",
+    "highlight": "面向工业运营",
+    "description": "将孤立的 SQLite 数据库转换为统一的云平台。DataSync Pro 提供离线优先同步和保证交付，完美适用于工业机器、远程站点和分布式应用。",
     "secondaryCta": "查看架构",
     "stats": {
-      "latency": { "value": "<50ms", "label": "典型边缘刷新" },
-      "uptime": { "value": "99.99%", "label": "面向 SLA 的设计" },
-      "deploy": { "value": "500+", "label": "边缘配置模板" }
+      "latency": { "value": "<100ms", "label": "边缘同步延迟" },
+      "uptime": { "value": "99.9%", "label": "平台可用性" },
+      "deploy": { "value": "1000+", "label": "活跃部署" }
     }
   },
+  "problem": {
+    "title": "SQLite 同步挑战",
+    "subtitle": "为什么传统方法在工业环境中失败",
+    "description": "工业运营依赖于运行在边缘设备、机器和远程站点上的 SQLite 数据库。但将这些数据同步到云端会带来独特挑战，通用解决方案无法应对。",
+    "challenges": [
+      {
+        "title": "不可靠连接",
+        "description": "工业环境通常有间歇性或不稳定的网络连接，使得实时同步变得不可能。"
+      },
+      {
+        "title": "数据丢失风险",
+        "description": "自定义同步脚本和手动流程容易在网络故障期间丢失关键运营数据。"
+      },
+      {
+        "title": "多站点管理复杂",
+        "description": "跨数百个远程位置、机器和边缘设备协调数据变得无法管理。"
+      },
+      {
+        "title": "离线运营要求",
+        "description": "工业系统必须在断开中央系统连接时继续运行。"
+      },
+      {
+        "title": "数据一致性问题",
+        "description": "确保分布式 SQLite 数据库的数据完整性和适当排序在技术上具有挑战性。"
+      },
+      {
+        "title": "可扩展性限制",
+        "description": "随着运营增长，传统同步方法变得脆弱且维护成本高昂。"
+      }
+    ]
+  },
+  "solution": {
+    "title": "DataSync Pro 解决方案",
+    "subtitle": "专为工业环境设计的的企业级 SQLite 同步",
+    "description": "DataSync Pro 通过离线优先架构解决边缘到云端数据同步的基本挑战，确保数据交付同时保持本地系统自主性。",
+    "keyPoints": [
+      {
+        "title": "离线优先设计",
+        "description": "本地 SQLite 数据库在网络故障期间完全保持运营，连接恢复时自动恢复同步。"
+      },
+      {
+        "title": "保证交付",
+        "description": "基于发件箱的架构确保每个数据变更被捕获并交付到云端，具有完整的审计跟踪。"
+      },
+      {
+        "title": "工业强化",
+        "description": "专为严苛工业环境设计，具有重试逻辑、序列验证和强大的错误管理。"
+      },
+      {
+        "title": "集中化可见性",
+        "description": "将孤立的边缘数据转换为统一的云端洞察，具有实时监控和分析能力。"
+      }
+    ]
+  },
   "features": {
-    "title": "可靠同步所需的一切",
-    "subtitle": "从机柜到数据湖——单一管道，端到端可观测。",
+    "title": "关键运营的企业级功能",
+    "subtitle": "专为工业环境中的可靠性、安全性和规模而设计",
     "items": [
       {
-        "title": "发件箱优先投递",
-        "description": "事件在本地捕获、排序，并在网络恢复后安全重放——杜绝静默丢失。"
+        "title": "离线优先同步",
+        "description": "网络故障期间本地运营继续无中断。变更排队并在连接恢复时自动同步。"
       },
       {
-        "title": "边缘 SQLite",
-        "description": "直接使用设备上已有的数据库。包含模式迁移与冲突钩子。"
+        "title": "发件箱模型架构",
+        "description": "具有序列编号的可靠变更捕获，确保所有操作中无数据丢失和适当顺序维护。"
       },
       {
-        "title": "实时流式传输",
-        "description": "变更发生时即时向上游推送，背压与批量由你掌控。"
+        "title": "批处理和优化",
+        "description": "智能批处理减少网络开销，同时为关键操作保持实时性能。"
       },
       {
-        "title": "工业级运维",
-        "description": "指标、结构化日志与追踪 ID，贯通边缘代理与云端摄入。"
+        "title": "企业级安全",
+        "description": "端到端加密、安全认证和架构，准备好遵守敏感工业数据合规性。"
       },
       {
-        "title": "策略驱动路由",
-        "description": "在数据离开工厂网络前进行过滤、丰富与路由。"
+        "title": "多站点可扩展性",
+        "description": "无缝管理数千个边缘位置，具有集中监控和自动冲突解决。"
       },
       {
-        "title": "多租户云端",
-        "description": "在共享统一控制平面的同时隔离客户与环境。"
+        "title": "实时监控",
+        "description": "全面仪表板、警报和审计日志提供对同步操作和系统状态的完整可见性。"
+      },
+      {
+        "title": "模式演进支持",
+        "description": "在分布式环境中管理数据库模式变更，具有自动迁移和版本控制。"
+      },
+      {
+        "title": "开发者友好集成",
+        "description": "REST APIs、SDK 和全面文档使与现有系统的集成变得简单。"
       }
     ]
   },
   "howItWorks": {
-    "title": "工作原理",
-    "subtitle": "从机器事件到云端事实的四步流程。",
+    "title": "DataSync Pro 如何工作",
+    "subtitle": "从边缘捕获到云端洞察的四步流程",
+    "description": "我们经过测试的同步架构确保从任何 SQLite 数据库到您云平台的可靠数据流。",
     "steps": [
       {
-        "title": "捕获",
-        "description": "为 SQLite 写入埋点；变更进入持久本地发件箱。"
+        "title": "变更捕获",
+        "description": "本地 SQLite 数据库变更自动捕获并存储在持久发件箱队列中，具有序列编号。"
       },
       {
-        "title": "暂存",
-        "description": "边缘代理批量、压缩并为载荷签名以便传输。"
+        "title": "智能批处理",
+        "description": "变更智能批处理和压缩以实现高效传输，尊重网络约束。"
       },
       {
-        "title": "同步",
-        "description": "HTTPS 流式传输，具备重试与幂等回执——在不稳定链路上依然安全。"
+        "title": "可靠传输",
+        "description": "安全 HTTPS 传输，具有自动重试逻辑和幂等处理，应对不稳定连接。"
       },
       {
-        "title": "投影",
-        "description": "云端服务物化视图、触发工作流并分发到分析系统。"
+        "title": "云端接收",
+        "description": "验证数据接收到您的云平台，保持引用完整性并启用实时分析。"
       }
     ]
   },
+  "architecture": {
+    "title": "架构概览",
+    "subtitle": "了解 DataSync Pro 同步框架",
+    "description": "我们的架构专为工业部署现实而设计：不可靠网络、分布式系统和关键运营。",
+    "sections": [
+      {
+        "title": "边缘代理架构",
+        "description": "轻量级代理在您的 SQLite 数据库旁边运行，捕获变更而不影响性能。",
+        "diagramNote": "[插入边缘代理架构图]"
+      },
+      {
+        "title": "发件箱模型实现",
+        "description": "变更捕获在有序队列中，即使在网络中断期间也保证可靠交付。",
+        "diagramNote": "[插入发件箱模型流程图]"
+      },
+      {
+        "title": "云端接收管道",
+        "description": "可扩展云服务验证、转换和存储同步数据，具有完整的审计能力。",
+        "diagramNote": "[插入云端管道架构]"
+      },
+      {
+        "title": "多站点同步",
+        "description": "集中协调管理跨数千个分布式位置的数据一致性。",
+        "diagramNote": "[插入多站点同步概览]"
+      }
+    ],
+    "diagramPlaceholder": "架构图和详细技术规范可在我们的文档中找到。"
+  },
   "useCases": {
-    "title": "为严肃的边缘环境而打造",
-    "subtitle": "当停机成本以金钱衡量时，团队选择 DataSync Pro。",
+    "title": "工业应用",
+    "subtitle": "在工业和分布式计算环境中经过验证的解决方案",
+    "description": "DataSync Pro 服务于需要在严苛运营环境中进行可靠 SQLite 同步的组织。",
     "cases": [
       {
-        "title": "产线制造",
-        "description": "MES 与近 SCADA 系统与中央生产历史保持一致。"
+        "title": "工业设备数据",
+        "description": "将 PLC、SCADA 系统和工业控制器连接到具有保证数据交付的中央监控平台。"
       },
       {
-        "title": "能源与公用事业",
-        "description": "变电站与现场设备在网络稳定前缓冲遥测数据。"
+        "title": "远程 SQLite 运营",
+        "description": "从远程设施和现场运营同步 SQLite 数据库，具有间歇性连接。"
       },
       {
-        "title": "交通资产",
-        "description": "机车与场站无需始终在线即可同步维护日志。"
+        "title": "物联网网关网络",
+        "description": "在统一的云分析平台中聚合分布式物联网设备和边缘网关的数据。"
       },
       {
-        "title": "智能楼宇",
-        "description": "边缘 BMS 控制器在区域云之前汇总读数。"
+        "title": "分布式桌面应用",
+        "description": "允许离线桌面软件与云服务同步，同时保持本地性能。"
+      },
+      {
+        "title": "能源和公用事业管理",
+        "description": "在偏远环境中监控变电站、智能电表和现场设备，具有可靠数据收集。"
+      },
+      {
+        "title": "运输和车队管理",
+        "description": "跟踪维护日志、传感器数据和来自车辆和移动设备的运营指标。"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "商业影响和投资回报",
+    "subtitle": "运营效率和决策制定方面的可衡量改进",
+    "description": "使用 DataSync Pro 的组织报告数据可靠性、运营可见性和系统可扩展性的显著改进。",
+    "metrics": [
+      {
+        "title": "99.9% 数据可靠性",
+        "description": "保证交付消除数据丢失，确保完整的运营可见性。"
+      },
+      {
+        "title": "70% 减少手动任务",
+        "description": "自动同步取代容易出错的手动导出和导入。"
+      },
+      {
+        "title": "50% 更快决策制定",
+        "description": "实时云可见性使对运营事件和趋势的响应更快。"
+      },
+      {
+        "title": "可扩展到 10,000+ 站点",
+        "description": "企业架构支持大规模扩展而不影响性能。"
+      }
+    ],
+    "outcomes": [
+      {
+        "title": "运营卓越",
+        "description": "减少停机时间、改进维护规划和优化资源利用。"
+      },
+      {
+        "title": "风险缓解",
+        "description": "消除数据丢失风险，确保符合运营数据要求。"
+      },
+      {
+        "title": "成本优化",
+        "description": "减少手动数据处理成本，降低定制开发支出。"
+      },
+      {
+        "title": "面向未来的架构",
+        "description": "建立在可扩展基础上，随着您的运营需求而增长。"
       }
     ]
   },
@@ -107,9 +249,9 @@
     "fields": {
       "name": "全名",
       "email": "专业邮箱",
-      "role": "职位",
+      "role": "专业角色",
       "country": "国家",
-      "phone": "电话号码",
+      "phoneNumber": "电话号码",
       "message": "信息",
       "captcha": "我不是机器人",
       "captchaLabel": "我确认我不是机器人"
@@ -124,63 +266,91 @@
     }
   },
   "testimonials": {
-    "title": "深受边缘平台团队喜爱",
-    "subtitle": "运营商在首次实现零丢失一周后的评价。",
+    "title": "获得行业领导者认可",
+    "subtitle": "组织转型数据运营的真实结果",
     "items": [
       {
-        "quote": "我们替换了一堆定时任务和脆弱的 FTP 投递。发件箱重放在运营商中断期间挽救了三家工厂。",
-        "author": "Elena Voss",
-        "role": "平台总监，Nordforge Automotive"
+        "quote": "DataSync Pro 完全消除了我们的数据同步头痛。我们现在对超过 200 个偏远制造站点运营有可靠的可见性。",
+        "author": "Sarah Chen",
+        "role": "运营副总裁，全球制造公司"
       },
       {
-        "quote": "产线用 SQLite，云端用 Postgres——DataSync Pro 让这种拆分显得稳妥而非可怕。",
-        "author": "Marcus Chen",
-        "role": "首席工程师，Gridline Energy"
+        "quote": "离线优先架构对我们的现场服务运营来说是游戏规则改变者。技术人员可以在任何地方工作，数据在重新连接时完美同步。",
+        "author": "Marcus Rodriguez",
+        "role": "CTO，FieldTech Solutions"
       },
       {
-        "quote": "延迟指标终于与 OT 团队在现场看到的一致。这份信任值得迁移。",
-        "author": "Sofia Martins",
-        "role": "数据负责人，Littoral Logistics"
+        "quote": "我们将手动数据处理减少了 80%，获得了对工业运营的实时洞察。从第一季度开始，投资回报就很明显。",
+        "author": "Dr. Elena Volkov",
+        "role": "数字化转型负责人，EnergyPlus"
       }
     ]
   },
   "faq": {
     "title": "常见问题",
-    "subtitle": "关于部署、安全与规模的快速解答。",
+    "subtitle": "关于 DataSync Pro 的常见问题解答",
     "items": [
       {
-        "q": "能否完全离线工作？",
-        "a": "可以。发件箱在本地持久保存，直到连接恢复；同步在保持顺序的前提下继续。"
+        "q": "DataSync Pro 如何处理离线操作？",
+        "a": "DataSync Pro 使用离线优先架构，其中本地 SQLite 数据库在网络故障期间完全保持运营。变更捕获在持久发件箱中，并在连接恢复时自动同步，确保无数据丢失。"
       },
       {
-        "q": "如何处理模式变更？",
-        "a": "边缘代理支持版本化迁移，并与云端投影任务协调以避免漂移。"
+        "q": "是什么让 SQLite 同步变得困难？",
+        "a": "分布式环境中的 SQLite 数据库面临连接问题、数据一致性挑战、模式演进和保证交付需求。传统方法通常在具有不可靠网络的工业环境中失败。"
       },
       {
-        "q": "加密如何实现？",
-        "a": "传输层 TLS、可选载荷信封加密，以及云端 KMS 集成。"
+        "q": "如何确保数据顺序和一致性？",
+        "a": "我们的发件箱模型捕获具有序列号的变更，确保适当顺序。云接收验证序列并处理冲突，在所有同步操作中保持数据完整性。"
       },
       {
-        "q": "能否自托管云端平面？",
-        "a": "企业版支持专属集群与 VPC 对等；欢迎咨询隔离部署方案。"
+        "q": "DataSync Pro 可以处理多个偏远站点吗？",
+        "a": "是的，DataSync Pro 专为具有数千个位置的多站点部署而设计。我们的云平台提供集中监控和管理，同时在每个站点保持本地自主性。"
+      },
+      {
+        "q": "数据传输安全吗？",
+        "a": "绝对安全。所有数据传输使用 TLS 加密，我们支持额外的加密层。该平台符合 SOC 2 标准，可以部署在 air-gapped 环境中以实现最大安全性。"
+      },
+      {
+        "q": "与现有系统的集成如何工作？",
+        "a": "DataSync Pro 提供 REST APIs、SDK 和全面文档。大多数集成只需要最少的代码变更，可以在几天而不是几个月内完成。"
+      },
+      {
+        "q": "数据冲突和模式变更怎么办？",
+        "a": "该平台包括冲突解决策略并支持模式演进。变更在分布式环境中进行版本控制和协调迁移。"
+      },
+      {
+        "q": "我们可以自托管云组件吗？",
+        "a": "是的，企业客户可以将云接收组件部署在其自己的基础设施中，包括本地数据中心和私有云。"
+      },
+      {
+        "q": "典型的部署时间表是什么？",
+        "a": "大多数部署在 4-8 周内完成，包括集成、测试和培训。我们在整个过程中提供全面支持。"
+      },
+      {
+        "q": "提供专业服务吗？",
+        "a": "是的，我们提供实施服务、定制集成、培训和持续支持，以确保成功部署和采用。"
       }
     ]
   },
   "footer": {
-    "tagline": "面向工业边缘的实时同步。",
+    "tagline": "面向工业运营的可靠 SQLite 同步。",
     "product": "产品",
     "company": "公司",
+    "resources": "资源",
     "legal": "法律",
     "links": {
       "docs": "文档",
-      "changelog": "更新日志",
-      "status": "状态",
+      "api": "API 参考",
+      "changelog": "变更日志",
+      "status": "系统状态",
       "about": "关于",
       "careers": "招聘",
-      "contact": "联系",
-      "privacy": "隐私",
-      "terms": "条款",
-      "security": "安全"
+      "blog": "博客",
+      "contact": "联系我们",
+      "privacy": "隐私政策",
+      "terms": "使用条款",
+      "security": "安全",
+      "support": "支持"
     },
     "copyright": "© {year} DataSync Pro。保留所有权利。"
   }
