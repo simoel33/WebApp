@@ -12,7 +12,8 @@ export interface ContactMessage {
   createdAt: string;
 }
 
-const MESSAGES_DIR = path.join(process.cwd(), 'messages');
+// Use /tmp for Vercel/serverless environments, fallback to local messages dir for development
+const MESSAGES_DIR = process.env.VERCEL ? '/tmp/messages' : path.join(process.cwd(), 'messages');
 const MESSAGES_FILE = path.join(MESSAGES_DIR, 'contact-messages.xml');
 
 export class XMLMessageStore {
