@@ -19,23 +19,30 @@ export async function POST(request: NextRequest) {
 
     console.log("Validation passed, saving message...");
     // Save to XML file
-    const savedMessage = await XMLMessageStore.saveMessage({
-      email,
-      name,
-      role,
-      country,
-      phoneNumber,
-      message,
-    });
-
-    console.log("Message saved successfully:", savedMessage.id);
-    return NextResponse.json(
-      {
-        message: "Message sent successfully",
-        id: savedMessage.id,
-      },
-      { status: 201 }
-    );
+    try {
+      const savedMessage = await XMLMessageStore.saveMessage({
+        email,
+        name,
+        role,
+        country,
+        phoneNumber,
+        message,
+      });
+      console.log("Message saved successfully:", savedMessage.id);
+      return NextResponse.json(
+        {
+          message: "Message sent successfully",
+          id: savedMessage.id,
+        },
+        { status: 201 }
+      );
+    } catch (saveError) {
+      console.error("Error saving message:", saveError);
+      return NextResponse.json(
+        { message: "Failed to save message to file" },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(

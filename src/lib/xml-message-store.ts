@@ -35,46 +35,57 @@ export class XMLMessageStore {
   }
 
   private static parseXML(xmlContent: string): ContactMessage[] {
-    const messages: ContactMessage[] = [];
+    try {
+      const messages: ContactMessage[] = [];
 
-    // Extract all IDs first to determine how many messages there are
-    const idRegex = /<id>([^<]+)<\/id>/g;
-    const ids: string[] = [];
-    let idMatch;
-    while ((idMatch = idRegex.exec(xmlContent)) !== null) {
-      ids.push(idMatch[1]);
-    }
-
-    // For each ID, extract the corresponding message data
-    for (let i = 0; i < ids.length; i++) {
-      const id = ids[i];
-      const messageStart = xmlContent.indexOf(`<id>${id}</id>`);
-      const nextMessageStart = i < ids.length - 1 ? xmlContent.indexOf(`<id>${ids[i + 1]}</id>`) : xmlContent.indexOf('</messages>');
-
-      const messageSection = xmlContent.substring(messageStart, nextMessageStart);
-
-      const message: Partial<ContactMessage> = { id };
-
-      // Extract other fields from this section
-      const fieldPatterns = {
-        email: /<email>([^<]+)<\/email>/,
-        name: /<name>([^<]+)<\/name>/,
-        role: /<role>([^<]+)<\/role>/,
-        country: /<country>([^<]+)<\/country>/,
-        phoneNumber: /<phoneNumber>([^<]+)<\/phoneNumber>/,
-        message: /<message>([^<]*?)<\/message>/,
-        createdAt: /<createdAt>([^<]*?)<\/createdAt>/
-      };
-
-      for (const [field, pattern] of Object.entries(fieldPatterns)) {
-        const match = messageSection.match(pattern);
-        (message as Record<string, string>)[field] = match ? match[1] : '';
+      // Extract all IDs first to determine how many messages there are
+      const idRegex = /<id>([^<]+)<\/id>/g;
+      const ids: string[] = [];
+      let idMatch;
+      while ((idMatch = idRegex.exec(xmlContent)) !== null) {
+        ids.push(idMatch[1]);
       }
 
-      messages.push(message as ContactMessage);
-    }
+      // For each ID, extract the corresponding message data
+      for (let i = 0; i < ids.length; i++) {
+        const id = ids[i];
+        const messageStart = xmlContent.indexOf(`<id>${id}</id>`);
+        const nextMessageStart = i < ids.length - 1 ? xmlContent.indexOf(`<id>${ids[i + 1]}</id>`) : xmlContent.indexOf('</messages>');
 
-    return messages;
+        if (messageStart === -1 || nextMessageStart === -1) {
+          console.warn(`Could not find message boundaries for ID: ${id}`);
+          continue;
+        }
+
+        const messageSection = xmlContent.substring(messageStart, nextMessageStart);
+
+        const message: Partial<ContactMessage> = { id };
+
+        // Extract other fields from this section
+        const fieldPatterns = {
+          email: /<email>([^<]+)<\/email>/,
+          name: /<name>([^<]+)<\/name>/,
+          role: /<role>([^<]+)<\/role>/,
+          country: /<country>([^<]+)<\/country>/,
+          phoneNumber: /<phoneNumber>([^<]+)<\/phoneNumber>/,
+          message: /<message>([\s\S]*?)<\/message>/,
+          createdAt: /<createdAt>([^<]*?)<\/createdAt>/
+        };
+
+        for (const [field, pattern] of Object.entries(fieldPatterns)) {
+          const match = messageSection.match(pattern);
+          (message as Record<string, string>)[field] = match ? match[1] : '';
+        }
+
+        messages.push(message as ContactMessage);
+      }
+
+      return messages;
+    } catch (error) {
+      console.error("XMLMessageStore parseXML error:", error);
+      // Return empty array if parsing fails
+      return [];
+    }
   }
 
   private static generateXML(messages: ContactMessage[]): string {
@@ -107,23 +118,41 @@ export class XMLMessageStore {
   }
 
   static async saveMessage(messageData: Omit<ContactMessage, 'id' | 'createdAt'>): Promise<ContactMessage> {
-    await this.ensureDirectory();
+    try {
+      console.log("XMLMessageStore: Ensuring directory...");
+      await this.ensureDirectory();
 
-    const xmlContent = await this.readMessagesFile();
-    const messages = this.parseXML(xmlContent);
+      console.log("XMLMessageStore: Reading messages file...");
+      const xmlContent = await this.readMessagesFile();
+      console.log("XMLMessageStore: XML content length:", xmlContent.length);
 
-    const newMessage: ContactMessage = {
-      ...messageData,
-      id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
-      createdAt: new Date().toISOString(),
-    };
+      console.log("XMLMessageStore: Parsing XML...");
+      const messages = this.parseXML(xmlContent);
+      console.log("XMLMessageStore: Parsed messages count:", messages.length);
 
-    messages.unshift(newMessage); // Add to beginning for latest first
+      const newMessage: ContactMessage = {
+        ...messageData,
+        id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+        createdAt: new Date().toISOString(),
+      };
+      console.log("XMLMessageStore: Created new message:", newMessage.id);
 
-    const newXMLContent = this.generateXML(messages);
-    await fs.writeFile(MESSAGES_FILE, newXMLContent, 'utf-8');
+      messages.unshift(newMessage); // Add to beginning for latest first
 
-    return newMessage;
+      console.log("XMLMessageStore: Generating XML...");
+      const newXMLContent = this.generateXML(messages);
+      console.log("XMLMessageStore: New XML length:", newXMLContent.length);
+
+      console.log("XMLMessageStore: Writing file...");
+      await fs.writeFile(MESSAGES_FILE, newXMLContent, 'utf-8');
+      console.log("XMLMessageStore: File written successfully");
+
+      return newMessage;
+    } catch (error) {
+      console.error("XMLMessageStore saveMessage error:", error);
+      console.error("Error stack:", error.stack);
+      throw new Error(`Failed to save message: ${error.message}`);
+    }
   }
 
   static async getMessages(page: number = 1, pageSize: number = 20): Promise<{
