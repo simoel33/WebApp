@@ -29,15 +29,12 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-    watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       captcha: false,
     },
   });
-
-  const captchaValue = watch("captcha");
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
