@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -53,13 +53,6 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.15 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <a
-            href="#pricing"
-            className="inline-flex items-center gap-2 rounded-xl bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:shadow-white/10 dark:hover:bg-zinc-200"
-          >
-            {t("primaryCta")}
-            <ArrowRight className="h-4 w-4" />
-          </a>
           <a
             href="#how-it-works"
             className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white/80 px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900/80 dark:text-zinc-100 dark:hover:bg-zinc-800"

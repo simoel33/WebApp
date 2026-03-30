@@ -20,7 +20,7 @@ export async function StructuredData({ params }: Props) {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free trial available"
+      "description": "Contact for pricing"
     },
     "publisher": {
       "@type": "Organization",
