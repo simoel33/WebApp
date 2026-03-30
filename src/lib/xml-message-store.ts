@@ -150,8 +150,8 @@ export class XMLMessageStore {
       return newMessage;
     } catch (error) {
       console.error("XMLMessageStore saveMessage error:", error);
-      console.error("Error stack:", error.stack);
-      throw new Error(`Failed to save message: ${error.message}`);
+      console.error("Error stack:", error instanceof Error ? error.stack : String(error));
+      throw new Error(`Failed to save message: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
